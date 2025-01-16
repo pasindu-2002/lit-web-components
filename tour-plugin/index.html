@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/components/tour.ts"></script>
+    <script type="module" src="/src/orchestrators/tour-orchestrator.ts"></script>
+  </head>
+  <body>
+
+    <div id="host"></div>
+
+    <div class="col-1">
+      <div id="tour-step-1" class="step">Step 01</div>
+      <div id="tour-step-2" class="step">Step 02</div>
+    </div>
+
+    <div class="col-2">
+      <div id="tour-step-3" class="step">Step 03</div>
+      <div id="tour-step-4" class="step">Step 04</div>
+    </div>
+    
+  </body>
+</html>
