@@ -5,18 +5,18 @@ interface TourConfig {
   imageUrl: string;
   title: string;
   content: string;
-  previousBtn: Boolean,
-  nextBtn: Boolean,
-  closeBtn: Boolean
+  previousBtn: Boolean;
+  nextBtn: Boolean;
+  closeBtn: Boolean;
 }
 
-const config: TourConfig[] = tourConfig.flatMap(item => item.entries);
+const config: TourConfig[] = tourConfig.flatMap((item) => item.entries);
 
 const tour = document.createElement("pl-tour") as any;
 
 let currentStep = Number(localStorage.getItem("currentStep")) || 0;
 
-updateTour(currentStep); 
+updateTour(currentStep);
 function updateTour(step: number) {
   tour.tour = {
     title: config[step].title,
@@ -25,7 +25,7 @@ function updateTour(step: number) {
     targetId: config[step].positionID,
     previousBtn: config[step].previousBtn,
     nextBtn: config[step].nextBtn,
-    closeBtn: config[step].closeBtn
+    closeBtn: config[step].closeBtn,
   };
 
   tour.step = step + 1;

@@ -204,21 +204,20 @@ export class Tour extends FastDialog {
                   ? html`
                       <button
                         class="btn-previous"
-                        @click="${this._onPreviousClicked}"
+                        @click="${this.onPreviousClicked}"
                         aria-label="Go to the previous step"
                       >
                         Previous
                       </button>
                     `
                   : null}
-
                 ${this.step === this.totalSteps
                   ? html`
                       ${this.tour.nextBtn
                         ? html`
                             <button
                               class="btn"
-                              @click="${this._onCompletedClicked}"
+                              @click="${this.onCompletedClicked}"
                               aria-label="Complete the tour"
                             >
                               Completed
@@ -231,7 +230,7 @@ export class Tour extends FastDialog {
                         ? html`
                             <button
                               class="btn"
-                              @click="${this._onNextClicked}"
+                              @click="${this.onNextClicked}"
                               aria-label="Go to the next step"
                             >
                               Next
@@ -245,15 +244,15 @@ export class Tour extends FastDialog {
         `;
   }
 
-  _onNextClicked() {
+  onNextClicked() {
     this.dispatchEvent(new CustomEvent("next-clicked"));
   }
 
-  _onPreviousClicked() {
+  onPreviousClicked() {
     this.dispatchEvent(new CustomEvent("previous-clicked"));
   }
 
-  _onCompletedClicked() {
+  onCompletedClicked() {
     localStorage.setItem("tourStatus", "completed");
     this.close();
   }
